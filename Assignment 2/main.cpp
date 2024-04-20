@@ -11,8 +11,15 @@ int main()
 
     Vec2 v1(100, 200);
     Vec2 v2(10, 20);
-    Vec2 v3 = v1 + v2;
-    std::cout << v3.x << "," << v3.y;
+    Vec2 v4 = v1 + v2;
+    float d = v2.dist(v1);
+    std::cout << d << std::endl;
+    v4.normalize();
+    std::cout << v4.x << "," << v4.y << std::endl;
+    if (v1 != v2)
+        std::cout << v1.x;
+    else
+        std::cout << v2.x;
 
     std::cout << std::endl << "=====================================================================================";
 

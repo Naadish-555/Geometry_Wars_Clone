@@ -23,7 +23,6 @@ public :
 	void operator /= (const Vec2 & rhs);
 	
 	float dist(const Vec2 & rhs) const;
-	float length() const;
-
+	Vec2& normalize();
 
 };

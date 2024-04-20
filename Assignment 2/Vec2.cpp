@@ -2,6 +2,7 @@
 #include <math.h>
 
 Vec2::Vec2()
+	:x(0.0f), y(0.0f)
 {
 
 }
@@ -19,8 +20,7 @@ Vec2 Vec2::operator + (const Vec2& rhs) const
 
 Vec2 Vec2::operator - (const Vec2& rhs) const
 {
-	//TODO
-	return Vec2(0, 0);
+	return Vec2(x - rhs.x, y - rhs.y);
 }
 
 Vec2 Vec2::operator * (const float val) const
@@ -30,8 +30,7 @@ Vec2 Vec2::operator * (const float val) const
 
 Vec2 Vec2::operator / (const float val) const
 {
-	//TODO
-	return Vec2(0, 0);
+	return Vec2(x / val, y / val);
 }
 
 bool Vec2::operator == (const Vec2& rhs) const
@@ -41,37 +40,37 @@ bool Vec2::operator == (const Vec2& rhs) const
 
 bool Vec2::operator != (const Vec2& rhs) const
 {
-	//TODO
-	return false;
+	return (x != rhs.x && y != rhs.y);
 }
 
 void Vec2::operator += (const Vec2& rhs)
 {
-	//TODO
+	x += rhs.x, y += rhs.y;
 }
 
 void Vec2::operator -= (const Vec2& rhs)
 {
-	//TODO
+	x -= rhs.x, y -= rhs.y;
 }
 
 void Vec2::operator *= (const Vec2& rhs)
 {
-	//TODO
+	x *= rhs.x, y *= rhs.y;
 }
 
 void Vec2::operator /= (const Vec2& rhs)
 {
-	//TODO	
+	x /= rhs.x, y /= rhs.y;
 }
 
 float Vec2::dist(const Vec2& rhs) const
-{
-	//TODO
-	return 0;
+{	
+	return (sqrtf(((x - rhs.x) * (x - rhs.x)) + ((y - rhs.y) * (y - rhs.y))));
 }
 
-float Vec2::length() const
+Vec2& Vec2::normalize()
 {
-	return 0.0f;
+	float mag = sqrtf(x * x + y * y);
+	x = x / mag, y = y / mag;
+	return *this;
 }
