@@ -2,26 +2,26 @@
 
 #include<iostream>
 
-class Vec2
+class Vec2f
 {
 public:
 	float x = 0;
 	float y = 0;
 
-	Vec2() {}
+	Vec2f() {}
 
-	Vec2(float xin, float yin)
+	Vec2f(float xin, float yin)
 		: x(xin)
 		, y(yin)
 	{
 	}
 
-	Vec2 operator + (const Vec2& rhs) const
+	Vec2f operator + (const Vec2f& rhs) const
 	{
-		return Vec2(x + rhs.x, y + rhs.y);
+		return Vec2f(x + rhs.x, y + rhs.y);
 	}
 
-	void operator += (const Vec2& rhs)
+	void operator += (const Vec2f& rhs)
 	{
 		x += rhs.x;
 		y += rhs.y;
@@ -29,37 +29,37 @@ public:
 
 
 	//Helps in chaining multiple values
-	Vec2& add(const Vec2& v)
+	Vec2f& add(const Vec2f& v)
 	{
 		x += v.x;
 		y += v.y;
 		return *this;
 	}
 
-	Vec2& scale(float s)
+	Vec2f& scale(float s)
 	{
 		x *= s;
 		y *= s;
 		return *this;
 	}
 
-	Vec2 rotate(float deg)
+	Vec2f rotate(float deg)
 	{
 		return *this;
 	}
 
-	float dist(const Vec2& v)const
+	float dist(const Vec2f& v)const
 	{
 		return sqrtf((v.x - x) * (v.x - x) + (v.y - y) * (v.y - y));
 	}
 };
 
-int main()
+int L5main()
 {
 
-	Vec2 v1(100, 200);
-	Vec2 v2(50, 75);
-	Vec2 v3(1000, 2000);
+	Vec2f v1(100, 200);
+	Vec2f v2(50, 75);
+	Vec2f v3(1000, 2000);
 
 	//Vec2 v3(v1.x + v2.x, v1.y + v2.y);
 	//Vec2 v3 = v1 + v2;
