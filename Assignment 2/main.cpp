@@ -1,12 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include<iostream>
 #include "Vec2.h"
-//#include "Game.h"
+#include "Game.h"
 
 int main()
 {
-    //Game g("Config.txt");
-    //g.run();
+    Game g("Config.txt");
+    g.run();
     std::cout << "Output on console" << std::endl;
 
     Vec2 v1(100, 200);

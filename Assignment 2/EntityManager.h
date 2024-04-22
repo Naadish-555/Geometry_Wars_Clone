@@ -10,7 +10,7 @@ typedef std::map<std::string, EntityVec> EntityMap;
 class EntityManager
 {
 	EntityVec	 m_entities;
-	EntityVec	 m_entitiesToAdd;
+	EntityVec	 m_entitiesToAdd;		//for delayed effects concept implentation
 	EntityMap	 m_entityMap;
 	size_t		 m_totalEntities = 0;
 
