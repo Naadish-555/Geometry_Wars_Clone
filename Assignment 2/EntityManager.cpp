@@ -36,6 +36,16 @@ void EntityManager::removeDeadEntities(EntityVec& vec)
 	//TODO : remove all dead entities from the input vector
 	//std::remove_if
 	//	this is called by the update() function
+	vec.erase(std::remove_if(vec.begin(), vec.end(), [](std::shared_ptr<Entity>& e)
+	{
+			return !(e->isActive());
+	}), vec.end());
+	/*for (size_t i = 0; i < vec.size(); i++)
+	{
+		if (!(vec[i]->isActive()))
+			vec.erase(vec.begin() + i);
+	}*/
+
 }
 
 std::shared_ptr<Entity> EntityManager::addEntity(const std::string& tag)
@@ -54,5 +64,5 @@ const EntityVec& EntityManager::getEntities()
 const EntityVec& EntityManager::getEntities(const std::string& tag)
 {
 	// TODO: this is incorrect,return the correct vector from the map
-	return m_entities;
+	return m_entityMap[tag];
 }

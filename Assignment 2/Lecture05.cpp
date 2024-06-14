@@ -48,7 +48,7 @@ public:
 		return *this;
 	}
 
-	float dist(const Vec2f& v)const
+	float distance(const Vec2f& v)const
 	{
 		return sqrtf((v.x - x) * (v.x - x) + (v.y - y) * (v.y - y));
 	}

@@ -15,6 +15,7 @@ class Entity
 	//constructor and destructor
 	Entity(const size_t id, const std::string& tag);
 
+
 public:
 
 	//component pointers

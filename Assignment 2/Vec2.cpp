@@ -65,7 +65,7 @@ void Vec2::operator /= (const Vec2& rhs)
 
 float Vec2::dist(const Vec2& rhs) const
 {	
-	return (sqrtf(((x - rhs.x) * (x - rhs.x)) + ((y - rhs.y) * (y - rhs.y))));
+	return (((x - rhs.x) * (x - rhs.x)) + ((y - rhs.y) * (y - rhs.y)));
 }
 
 Vec2& Vec2::normalize()
