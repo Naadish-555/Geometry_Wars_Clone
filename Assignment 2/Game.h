@@ -7,7 +7,7 @@
 
 struct WindowConfig { int WW, WH, FL, FS; };
 struct FontConfig { int S, R, G, B; std::string F; };
-struct PlayerConfig	{ int SR, CR, FR, FG, FV, OR, OG, OB, OT, V; float S; };
+struct PlayerConfig	{ int SR, CR, FR, FG, FB, OR, OG, OB, OT, V; float S; };
 struct EnemyConfig	{ int SR, CR, OR, OG, OB, OT, VMIN, VMAX, L, SI; float SMIN, SMAX; };
 struct BulletConfig { int SR, CR, FR, FG, FB, OR, OG, OB, OT, V, L; float S; };
 
